@@ -1,0 +1,6 @@
+#base=js
+bootstrap.bundle.min.js
+bootstrap.min.js
+fiveday.js
+jquery-3.6.0.min.js
+popper.min.js
