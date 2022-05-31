@@ -1,0 +1,35 @@
+<sly data-sly-test="${wcmmode.edit}"
+     data-sly-use.authoringUtils="/libs/wcm/foundation/components/utils/AuthoringUtils.js"></sly>
+<h1>Employee Data</h1>
+<sly data-sly-use.employeeData="com.icf.weathersite.core.models.EmployeeData">
+
+    <div data-sly-list="${employeeData.employeeDataPojoList}">
+
+        Employee ID : ${employeeData.id}
+        Employee First Name : ${employeeData.firstName}
+        Employee Last Name : ${employeeData.lastName}
+        Employee Address : ${employeeData.address}
+        Employee Designation : ${employeeData.designation}
+
+    </div>
+
+</sly>
+
+
+<!--
+<sly data-sly-test="${wcmmode.edit}"
+     data-sly-use.authoringUtils="/libs/wcm/foundation/components/utils/AuthoringUtils.js"></sly>
+<sly data-sly-use.multiplelineblock="com.kotak.aem.www.content.multiplelineblock.MultipleLineBlock">
+    <div data-sly-test="${properties.mainTitle}"> /// used for test///
+        ${properties.mainTitle}
+    </div>
+    <div data-sly-test="${multiplelineblock.multiLink}"
+         data-sly-list="${multiplelineblock.multiLink}">
+        <p>${item.iconLink}</p>
+        <p>${item.title}</p>
+        <p>${item.redirectionLink}</p>
+    </div>
+</sly>
+<img data-sly-test="${wcmmode.edit && authoringUtils && authoringUtils.isTouch}"
+     src="/etc/designs/default/0.gif" data-emptytext="multiplelinkblock Component"
+     class="cq-placeholder file cq-dd-image"/>-->

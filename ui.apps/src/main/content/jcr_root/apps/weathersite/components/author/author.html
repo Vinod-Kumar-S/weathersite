@@ -1,0 +1,16 @@
+<sly data-sly-test="${wcmmode.edit}"
+     data-sly-use.authoringUtils="/libs/wcm/foundation/components/utils/AuthoringUtils.js"></sly>
+<sly data-sly-use.multiplelineblock="com.icf.weathersite.core.models.Author">
+    <div data-sly-test="${properties.mainTitle}">
+        ${properties.mainTitle}
+    </div>
+    <div data-sly-test="${Author.multiLink}"
+         data-sly-list="${Author.multiLink}">
+        <p>${item.iconLink}</p>
+        <p>${item.title}</p>
+        <p>${item.pagePath}</p>
+    </div>
+</sly>
+<img data-sly-test="${wcmmode.edit && authoringUtils && authoringUtils.isTouch}"
+     src="/etc/designs/default/0.gif" data-emptytext="author Component"
+     class="cq-placeholder file cq-dd-image"/>

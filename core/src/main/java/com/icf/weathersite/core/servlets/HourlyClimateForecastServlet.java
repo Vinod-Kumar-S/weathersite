@@ -36,14 +36,14 @@ public class HourlyClimateForecastServlet extends SlingSafeMethodsServlet {
         String lat = req.getParameter("lat");
 
         ObjectMapper mapper = new ObjectMapper();
-        logger.info("calling weatherservice for current weather for longitude and latitude : {}", lon, lat);
+        logger.info("calling weatherservice for current weather for longitude and latitude : {}, {}", lon, lat);
         HourlyApiResponse hourlyApiResponse = weatherService.getClimateForecastForHourly(lon, lat);
-        logger.debug("got api response for current weather Longitude and Latitude : {} \n {}", lon, lat, hourlyApiResponse);
+        logger.debug("got api response for current weather Longitude and Latitude : {} \n {} \n {}", lon, lat, hourlyApiResponse);
         if(hourlyApiResponse != null){
-            logger.info("writing response to api call for current weather for city : {}", lon, lat);
+            logger.info("writing response to api call for current weather for city : {}, {}", lon, lat);
             resp.getWriter().write(mapper.writeValueAsString(hourlyApiResponse));
         }else{
-            logger.error("received null for current weather for city : {}", lon, lat);
+            logger.error("received null for current weather for city : {},{}", lon, lat);
             //set the response code
             resp.setStatus(HttpStatus.SC_INTERNAL_SERVER_ERROR);
             //construct ApiError object

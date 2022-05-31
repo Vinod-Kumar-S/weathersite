@@ -1,0 +1,16 @@
+<sly data-sly-test="${wcmmode.edit}"
+     data-sly-use.authoringUtils="/libs/wcm/foundation/components/utils/AuthoringUtils.js"></sly>
+<sly data-sly-use.pageproperties="com.icf.weathersite.core.models.PageProperties">
+    <div data-sly-test="${properties.mainTitle}"> /// used for test///
+        ${properties.mainTitle}
+    </div>
+    <div data-sly-test="${pageproperties.multiLink}"
+         data-sly-list="${pageproperties.multiLink}">
+        <p>${item.pagePath}</p>
+        <p>${item.title}</p>
+        <p>${item.description}</p>
+    </div>
+</sly>
+<img data-sly-test="${wcmmode.edit && authoringUtils && authoringUtils.isTouch}"
+     src="/etc/designs/default/0.gif" data-emptytext="Page Properties"
+     class="cq-placeholder file cq-dd-image"/>
